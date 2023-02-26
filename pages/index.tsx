@@ -2,11 +2,20 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { PortraitContainer } from "@/containers/PortraitContainer/PortraitContainer";
+import { TemporaryComponent } from "@/components/TemporaryComponent/TemporaryComponent";
+import { LeadToContainer } from "@/containers/LeadToContainer/LeadToContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ messages }: { messages: any }) {
-	return <div className={styles.description}></div>;
+	return (
+		<div>
+			<PortraitContainer />
+			<LeadToContainer />
+			<TemporaryComponent />
+		</div>
+	);
 }
 
 export async function getServerSideProps({ locale }: { locale: string }) {

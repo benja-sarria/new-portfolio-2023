@@ -1,3 +1,7 @@
+import {
+	PageLoadingContext,
+	PageLoadingContextInterface,
+} from "@/context/PageLoadingProvider";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import {
@@ -18,7 +22,6 @@ export const LanguageSelectorComponent = ({
 	type,
 	device,
 	locale,
-	setPageLoading,
 }: {
 	type: string;
 	device?: string;
@@ -29,6 +32,10 @@ export const LanguageSelectorComponent = ({
 		locale === "es" ? "ES" : locale.toLowerCase() === "en-us" ? "ENG" : ""
 	);
 	const router = useRouter();
+
+	const { setPageLoading } = useContext(
+		PageLoadingContext
+	) as PageLoadingContextInterface;
 
 	/* 	useEffect(() => {
 		if (router.locale !== language) {
@@ -49,7 +56,7 @@ export const LanguageSelectorComponent = ({
 		console.log(router);
 
 		if (target.id.toLowerCase() === langConf.ES_LANG.toLowerCase()) {
-			setPageLoading(true);
+			setPageLoading && setPageLoading(true);
 			setLanguage(langConf.ES_LANG);
 			router.push(
 				`${
@@ -72,7 +79,7 @@ export const LanguageSelectorComponent = ({
 		} else if (
 			target.id.toLowerCase() === langConf.ENG_LANG.toLowerCase()
 		) {
-			setPageLoading(true);
+			setPageLoading && setPageLoading(true);
 			setLanguage(langConf.ENG_LANG);
 			router.push(
 				`${

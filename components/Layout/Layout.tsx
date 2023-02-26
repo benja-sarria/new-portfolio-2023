@@ -1,7 +1,13 @@
-import { MessagesContext } from "@/context/messagesContextProvider";
+import { MessagesContext } from "@/context/MessagesContextProvider";
+import {
+	PageLoadingContext,
+	PageLoadingContextInterface,
+} from "@/context/PageLoadingProvider";
 import Head from "next/head";
-import { ReactNode, useContext, useEffect } from "react";
+import { ReactNode, useContext, useEffect, useState } from "react";
 import { NavbarContainer } from "../../containers/NavbarContainer/NavbarContainer";
+import { PageLoadingComponent } from "../PageLoadingComponent/PageLoadingComponent";
+import style from "./Layout.module.scss";
 
 export default function Layout({
 	children,
@@ -13,8 +19,19 @@ export default function Layout({
 	const { setActiveMessages } = useContext(MessagesContext) as {
 		setActiveMessages: Function;
 	};
+	const { pageLoading, setPageLoading } = useContext(
+		PageLoadingContext
+	) as PageLoadingContextInterface;
+
 	useEffect(() => {
 		setActiveMessages(messages);
+	}, [messages]);
+
+	useEffect(() => {
+		setTimeout(() => {
+			console.log("EJECUTANDO");
+			setPageLoading && setPageLoading(false);
+		}, 300);
 	}, [messages]);
 
 	return (
@@ -32,7 +49,8 @@ export default function Layout({
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<NavbarContainer />
-			<main>{children}</main>
+			<main className={style["main-content"]}>{children}</main>
+			<PageLoadingComponent pageLoading={pageLoading} />
 		</>
 	);
 }

@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout/Layout";
-import { MessagesCtxProvider } from "@/context/messagesContextProvider";
+import { MessagesCtxProvider } from "@/context/MessagesContextProvider";
+import { PageLoadingCtxProvider } from "@/context/PageLoadingProvider";
 import "@/styles/globals.css";
 import { NextIntlProvider } from "next-intl";
 
@@ -9,9 +10,11 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<NextIntlProvider messages={pageProps.messages}>
 			<MessagesCtxProvider>
-				<Layout messages={pageProps.messages}>
-					<Component {...pageProps} />
-				</Layout>
+				<PageLoadingCtxProvider>
+					<Layout messages={pageProps.messages}>
+						<Component {...pageProps} />
+					</Layout>
+				</PageLoadingCtxProvider>
 			</MessagesCtxProvider>
 		</NextIntlProvider>
 	);

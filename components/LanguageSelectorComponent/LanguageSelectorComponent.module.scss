@@ -32,6 +32,7 @@
 				transform: translateY(0rem);
 				bottom: 0rem;
 				font-weight: 400;
+				text-shadow: 2px 2px 20px #000059;
 
 				&:hover {
 					.lang-selector-btn-text {
@@ -85,6 +86,8 @@
 			position: relative;
 			transform: translateY(0rem);
 			left: 7.5%;
+			text-shadow: 2px 2px 15px #000059d7;
+
 			.lang-selector-btn-text {
 				font-size: 1.05rem;
 				opacity: 0.6;

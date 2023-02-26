@@ -10,6 +10,12 @@
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
 
+	--font-main-color: #ffff;
+	--background-main-color: #00d3e2;
+	--space-background-color: #000329;
+	--space-background-color-alt: #00aebb;
+	--shapes-grey-color: #dbdbdb;
+
 	--primary-glow: conic-gradient(
 		from 180deg at 50% 50%,
 		#16abff33 0deg,
@@ -46,6 +52,27 @@
 	src: url("../public/assets/fonts/Jaden.ttf") format("truetype");
 	font-display: swap;
 	font-weight: 600;
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("../public/assets/fonts/raleway/Raleway-VariableFont_wght.ttf")
+		format("truetype");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Century Gothic";
+	src: url("../public/assets/fonts/century-gothic/GOTHIC.TTF")
+		format("truetype");
+	font-display: swap;
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Century Gothic";
+	src: url("../public/assets/fonts/century-gothic/GOTHICB.TTF")
+		format("truetype");
+	font-display: swap;
+	font-weight: 800;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -98,9 +125,11 @@ body {
 
 body {
 	color: rgb(var(--foreground-rgb));
-	background-color: /* #2e0249 */ #6300a9;
+	/* background-color:  #2e0249 #bf00ff; */
+	background-image: linear-gradient(to bottom, #00d3e2, #00d3e2, #000329 45%);
 	/* background: linear-gradient(to bottom, transparent, #422d53)
 		rgb(var(--background-start-rgb)); */
+	min-height: 600vh;
 }
 
 a {
