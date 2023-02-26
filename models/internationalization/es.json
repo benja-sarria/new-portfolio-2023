@@ -1,0 +1,26 @@
+{
+	"navigationComponent": {
+		"pageLogo": {
+			"src": "",
+			"imgAlt": ""
+		},
+		"menu": {
+			"aboutMe": {
+				"text": "Sobre mi",
+				"hyperlink": ""
+			},
+			"projects": {
+				"text": "Proyectos",
+				"hyperlink": ""
+			},
+			"experience": {
+				"text": "Experiencias",
+				"hyperlink": ""
+			},
+			"skills": {
+				"text": "Habilidades",
+				"hyperlink": ""
+			}
+		}
+	}
+}
