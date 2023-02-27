@@ -30,6 +30,11 @@
 			"description": "Fullstack Web <break></break> Developer"
 		}
 	},
+	"leadToComponent": {
+		"button": {
+			"btnText": "Llévame a explorar!"
+		}
+	},
 	"temporaryComponent": {
 		"componentHeading": {
 			"title": "Ups! Parece que hay un problema...",

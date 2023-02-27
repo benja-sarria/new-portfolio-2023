@@ -11,6 +11,7 @@ $logo-multiplier: 6;
 	position: fixed;
 	min-width: 99vw;
 	max-height: 5rem;
+	z-index: 2;
 
 	.navbar-logo-outer-container {
 		display: flex;

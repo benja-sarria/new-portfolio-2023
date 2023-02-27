@@ -9,7 +9,7 @@ export const TemporaryComponent = () => {
 	const [playGame, setPlayGame] = useState<boolean>(false);
 
 	return (
-		<div className={style["temporary-container"]}>
+		<div className={style["temporary-container"]} id={"temporarySection"}>
 			<div className={style["temporary-heading-container"]}>
 				<div className={style["temporary-img-container"]}>
 					<Image
