@@ -7,6 +7,7 @@ import style from "./TemporaryComponent.module.scss";
 export const TemporaryComponent = () => {
 	const temporaryTranslations = useTranslations("temporaryComponent");
 	const [playGame, setPlayGame] = useState<boolean>(false);
+	const [selectedTemp, setSelectedTemp] = useState<"game" | "music">("game");
 
 	return (
 		<div className={style["temporary-container"]} id={"temporarySection"}>
@@ -54,60 +55,85 @@ export const TemporaryComponent = () => {
 					</p>
 				</div>
 			</div>
-			<div className={style["iframe-game-container"]}>
-				{playGame ? (
-					<iframe
-						src="https://basicallydan.github.io/skifree.js/"
-						style={{
-							top: "0px",
-							left: "0px",
-							width: "100%",
-							height: "100%",
-							border: "none",
-							overflow: "hidden",
-						}}
-						id={"skifree-canvas"}></iframe>
-				) : (
-					<></>
-				)}
-				<div
-					className={`${style["iframe-placeholder-outer-container"]}${
-						playGame ? ` ${style["hide-placeholder"]}` : ""
-					}`}>
-					<div className={style["iframe-placeholder-container"]}>
-						<Image
-							src={"/assets/img/figures/Skifree-placeholder.webp"}
-							alt="skifree placeholder"
-							fill
-						/>
-					</div>
-					<div className={style["iframe-placeholder-button-overlay"]}>
-						<p className={style["iframe-placeholder-details"]}>
-							{temporaryTranslations.rich(
-								"gameIframe.details",
-								{}
-							)}
-						</p>
-						<button
-							className={style["iframe-placeholder-button"]}
-							onClick={(evt: SyntheticEvent) => {
-								setPlayGame(true);
-								setTimeout(() => {
-									const canvas = document.querySelector(
-										`#skifree-canvas`
-									) as HTMLElement;
-									canvas.click();
-									canvas.focus();
-								}, 500);
-							}}>
-							{temporaryTranslations.rich(
-								"gameIframe.btnText",
-								{}
-							)}
-						</button>
+			{selectedTemp === "game" ? (
+				<div className={style["iframe-game-container"]}>
+					{playGame ? (
+						<iframe
+							src="https://basicallydan.github.io/skifree.js/"
+							style={{
+								top: "0px",
+								left: "0px",
+								width: "100%",
+								height: "100%",
+								border: "none",
+								overflow: "hidden",
+							}}
+							id={"skifree-canvas"}></iframe>
+					) : (
+						<></>
+					)}
+					<div
+						className={`${
+							style["iframe-placeholder-outer-container"]
+						}${playGame ? ` ${style["hide-placeholder"]}` : ""}`}>
+						<div className={style["iframe-placeholder-container"]}>
+							<Image
+								src={
+									"/assets/img/figures/Skifree-placeholder.webp"
+								}
+								alt="skifree placeholder"
+								fill
+							/>
+						</div>
+						<div
+							className={
+								style["iframe-placeholder-button-overlay"]
+							}>
+							<p className={style["iframe-placeholder-details"]}>
+								{temporaryTranslations.rich(
+									"gameIframe.details",
+									{}
+								)}
+							</p>
+							<button
+								className={style["iframe-placeholder-button"]}
+								onClick={(evt: SyntheticEvent) => {
+									setPlayGame(true);
+									setTimeout(() => {
+										const canvas = document.querySelector(
+											`#skifree-canvas`
+										) as HTMLElement;
+										canvas.click();
+										canvas.focus();
+									}, 500);
+								}}>
+								{temporaryTranslations.rich(
+									"gameIframe.btnText",
+									{}
+								)}
+							</button>
+							<p className={style["iframe-placeholder-details"]}>
+								{temporaryTranslations.rich(
+									"gameIframe.musicBrief",
+									{}
+								)}
+							</p>
+							<button
+								className={style["iframe-placeholder-button"]}
+								onClick={(evt: SyntheticEvent) => {
+									setSelectedTemp("music");
+								}}>
+								{temporaryTranslations.rich(
+									"gameIframe.musicBtnTxt",
+									{}
+								)}
+							</button>
+						</div>
 					</div>
 				</div>
-			</div>
+			) : (
+				<></>
+			)}
 		</div>
 	);
 };

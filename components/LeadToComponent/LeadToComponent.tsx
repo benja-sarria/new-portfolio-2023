@@ -36,11 +36,11 @@ export const LeadToComponent = ({
 							});
 						}}>
 						<div className={style["btn-img-container"]}>
-							<Image
-								src={"/assets/img/figures/button-start.webp"}
+							{/* <Image
+								src={"/assets/img/other/shape-2.webp"}
 								alt="launch button"
 								fill
-							/>
+							/> */}
 						</div>
 						<h3 className={style["lead-btn-text"]}>
 							{leadToTranslations("button.btnText")}

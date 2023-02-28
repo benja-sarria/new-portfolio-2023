@@ -42,7 +42,13 @@
 		},
 		"gameIframe": {
 			"btnText": "Jugar!",
-			"details": "Podrá parecer irrelevante esta invitación, pero en realidad dice mucho sobre mí. Me inicié en el mundo digital de pequeño, a través de desarrollos como este. A lo largo de mi vida tuve la oportunidad de jugar y disfrutar incontables títulos. Pero no solamente me llevé historias, y momentos de diversión. Me llevé canciones y bandas sonoras, me llevé frases y e interrogantes sobre nuestra realidad, me llevé idiomas. A través de los juegos he sumado incontables recursos que me ayudan a ser hoy en día el profesional que soy. Un juego deja de ser tal cuando hay un conjunto de profesionales que trabajan en desarrollar una trama, contar una historia, transmitir un mensaje y emociones, a través de sus diálogos y su música. Deja de serlo cuando artistas gráficos nos regalan los paisajes más bellos que podríamos haber imaginado. Cuando historiadores intervienen para brindar mayor credibilidad al mundo y entorno en donde se desarrolla. Deja de ser un juego, para pasar a ser un juegaso, y una oportunidad de aprendizaje. Pero no quiero aburrir con mis ideas ni distraerte, que no te atrape el Yeti! "
+			"details": "Podrá parecer irrelevante esta invitación, pero en realidad dice mucho sobre mí. Me inicié en el mundo digital de pequeño, a través de desarrollos como este. A lo largo de mi vida tuve la oportunidad de jugar y disfrutar incontables títulos. Pero no solamente me llevé historias, y momentos de diversión. Me llevé canciones y bandas sonoras, me llevé frases y e interrogantes sobre nuestra realidad, me llevé idiomas. A través de los juegos he sumado incontables recursos que me ayudan a ser hoy en día el profesional que soy. Un juego deja de ser tal cuando hay un conjunto de profesionales que trabajan en desarrollar una trama, contar una historia, transmitir un mensaje y emociones, a través de sus diálogos y su música. Deja de serlo cuando artistas gráficos nos regalan los paisajes más bellos que podríamos haber imaginado. Cuando historiadores intervienen para brindar mayor credibilidad al mundo y entorno en donde se desarrolla. Deja de ser un juego, para pasar a ser un juegaso, y una oportunidad de aprendizaje. Pero no quiero aburrir con mis ideas ni distraerte, que no te atrape el Yeti! ",
+			"musicBrief": "'Mmm Benja... no soy una persona de los juegos'. No hay problema! si prefieres encontrar inspiración en la música, dejarte llenar por los sonidos que te muevan emocionalmente: te dejo la siguiente propuesta",
+			"musicBtnTxt": "Quiero escuchar!"
+		},
+		"musicIframe": {
+			"btnText": "Escuchar!",
+			"details": ""
 		}
 	}
 }
