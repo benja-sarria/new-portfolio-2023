@@ -7,6 +7,8 @@ import style from "./TemporaryComponent.module.scss";
 export const TemporaryComponent = () => {
 	const temporaryTranslations = useTranslations("temporaryComponent");
 	const [playGame, setPlayGame] = useState<boolean>(false);
+	const [playMusic, setPlayMusic] = useState<boolean>(false);
+
 	const [selectedTemp, setSelectedTemp] = useState<"game" | "music">("game");
 
 	return (
@@ -92,7 +94,11 @@ export const TemporaryComponent = () => {
 							<p className={style["iframe-placeholder-details"]}>
 								{temporaryTranslations.rich(
 									"gameIframe.details",
-									{}
+									{
+										break: () => {
+											return <br />;
+										},
+									}
 								)}
 							</p>
 							<button
@@ -132,7 +138,92 @@ export const TemporaryComponent = () => {
 					</div>
 				</div>
 			) : (
-				<></>
+				// music
+				<div className={style["iframe-game-container"]}>
+					{playMusic ? (
+						<iframe
+							width="560"
+							height="315"
+							src="https://www.youtube.com/embed/kottjfEd7Zw"
+							title="YouTube video player"
+							frameBorder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowFullScreen
+							style={{
+								top: "0px",
+								left: "0px",
+								width: "100%",
+								height: "100%",
+								border: "none",
+								overflow: "hidden",
+							}}
+							id={"youtube-canvas"}></iframe>
+					) : (
+						<></>
+					)}
+					<div
+						className={`${
+							style["iframe-placeholder-outer-container"]
+						}${playMusic ? ` ${style["hide-placeholder"]}` : ""}`}>
+						<div className={style["iframe-placeholder-container"]}>
+							<Image
+								src={
+									"/assets/img/figures/Skifree-placeholder.webp"
+								}
+								alt="skifree placeholder"
+								fill
+							/>
+						</div>
+						<div
+							className={
+								style["iframe-placeholder-button-overlay"]
+							}>
+							<p className={style["iframe-placeholder-details"]}>
+								{temporaryTranslations.rich(
+									"musicIframe.details",
+									{
+										break: () => {
+											return <br />;
+										},
+									}
+								)}
+							</p>
+							<button
+								className={style["iframe-placeholder-button"]}
+								onClick={(evt: SyntheticEvent) => {
+									setPlayMusic(true);
+									setTimeout(() => {
+										const canvas = document.querySelector(
+											`#youtube-canvas`
+										) as HTMLElement;
+										canvas.click();
+										canvas.focus();
+									}, 500);
+								}}>
+								{temporaryTranslations.rich(
+									"musicIframe.btnText",
+									{}
+								)}
+							</button>
+							{/* <p className={style["iframe-placeholder-details"]}>
+								{temporaryTranslations.rich(
+									"gameIframe.musicBrief",
+									{}
+								)}
+							</p>
+							<button
+								className={style["iframe-placeholder-button"]}
+								onClick={(evt: SyntheticEvent) => {
+									setSelectedTemp("music");
+								}}>
+								{temporaryTranslations.rich(
+									"gameIframe.musicBtnTxt",
+									{}
+								)}
+							</button> */}
+						</div>
+					</div>
+				</div>
 			)}
 		</div>
 	);
