@@ -4,11 +4,20 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
+	@media (min-width: 1024px) {
+		flex-direction: row;
+	}
 	.portrait-text-contents {
 		display: flex;
 		align-items: flex-end;
+		flex-direction: column;
+
 		column-gap: 3rem;
 		color: var(--font-main-color);
+		@media (min-width: 1024px) {
+			flex-direction: row;
+		}
 		.portrait-title-container {
 			display: flex;
 			flex-direction: column;
